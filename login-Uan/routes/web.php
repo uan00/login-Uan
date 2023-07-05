@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// untuk data statis
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/awal', function () { 
+    return view('index');
+});
+
+// untuk autentikasi, jadi kalo mau ke page /home harus login terlebih dahulu 
+// karena data yang ditampilkan data dinamis
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
