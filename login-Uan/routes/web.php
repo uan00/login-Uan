@@ -22,6 +22,11 @@ Route::get('/awal', function () {
     return view('index');
 });
 
+Route::get('/login-test', function () {
+    return view('login');
+});
+
+
 // untuk autentikasi, jadi kalo mau ke page /home harus login terlebih dahulu 
 // karena data yang ditampilkan data dinamis
 Auth::routes();
